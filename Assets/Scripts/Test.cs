@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    private GameObject test;
+    private GameObject banana;
 
     void Start()
     {
