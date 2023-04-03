@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class ObjectPlaceManager : MonoBehaviour
 {
-    public Tile furnace;
+    public List<Tile> tiles;
     public Tilemap floor;
     public Tilemap machines;
     public Tilemap seePlacement;
@@ -13,7 +15,7 @@ public class ObjectPlaceManager : MonoBehaviour
     private GridLayout floorMap;
     private GridLayout machineMap;
 
-    private string selectedMachine = "Furnace";
+    public TMP_Dropdown machineSelection;
     private bool machineSelected = false;
 
     private Vector3Int pastMousePos = new Vector3Int(0, 0, 0);
@@ -26,15 +28,14 @@ public class ObjectPlaceManager : MonoBehaviour
 
     void Update()
     {
-        SeeTilePlace(furnace);
-
+        SeeTilePlace(tiles[machineSelection.value]);
         if (Input.GetMouseButtonUp(0) == true)
         {
             machineSelected = true;
         }
         if (machineSelected) 
         {
-            PlaceTile(furnace);
+            PlaceTile(tiles[machineSelection.value]);
             machineSelected = false;
         }
     }

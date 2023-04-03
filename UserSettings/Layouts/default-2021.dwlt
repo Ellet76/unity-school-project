@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 21
+  controlID: 61
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 40
+  controlID: 62
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -285,7 +285,7 @@ MonoBehaviour:
     m_CachedPref: 50
     m_ControlHash: 1964396721
     m_PrefName: Preview_TilemapBrushInspector
-  m_Palette: {fileID: 5518860807126836966, guid: ceda340774124014586eaa3af1447ac8, type: 3}
+  m_Palette: {fileID: 8826751989341345493, guid: cffe951cbf5f1df4c9f731738a470ba5, type: 3}
   m_DrawGridGizmo: 1
   m_DrawGizmos: 0
 --- !u!114 &12
@@ -526,13 +526,13 @@ MonoBehaviour:
     gitStatusEntries: []
     changedFilesText: No changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2023-03-28T08:00:06.296+02:00
+      updatedTimeString: 2023-03-28T22:11:38.561+02:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2023-03-28T08:00:08.471+02:00
+      updatedTimeString: 2023-03-28T22:11:38.019+02:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2023-03-27T15:38:59.227+02:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
@@ -1532,8 +1532,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Scripts
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -1572,10 +1571,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 57.80002}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000065e0000085e00000a5e00000c5e00000e5e0000105e0000
+    m_ExpandedIDs: ffffffff00000000065e0000085e00000a5e00000c5e0000105e00004c5e00004e5e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2003,9 +2002,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.20351982, y: 0.3020352, z: -1.0206261}
+    m_Target: {x: 379.7932, y: 246.04881, z: -8.38933}
     speed: 2
-    m_Value: {x: 0.20351982, y: 0.3020352, z: -1.0206261}
+    m_Value: {x: 379.7932, y: 246.04881, z: -8.38933}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2056,9 +2055,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.165315
+    m_Target: 619.1431
     speed: 2
-    m_Value: 9.165315
+    m_Value: 619.1431
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2114,9 +2113,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 2afbffff
+      m_SelectedIDs: a05d0000
+      m_LastClickedID: 23968
+      m_ExpandedIDs: 60f3ffff44f9ffff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
