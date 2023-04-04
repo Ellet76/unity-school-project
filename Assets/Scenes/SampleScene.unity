@@ -3173,12 +3173,18 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
+    - m_Text: None
+      m_Image: {fileID: 21300000, guid: 74005ec319475234381ad39c866a1fbd, type: 3}
+    - m_Text: Conveyer
+      m_Image: {fileID: 21300000, guid: 2b3e8cc76a9f14f45996553bf5a201e2, type: 3}
+    - m_Text: Crafter
+      m_Image: {fileID: 21300000, guid: 07584694a1c5fc74f928c3befb95aecf, type: 3}
+    - m_Text: Furnace
+      m_Image: {fileID: 21300000, guid: 273e4c0c639479148821dc7173c2f2ae, type: 3}
+    - m_Text: Press
+      m_Image: {fileID: 21300000, guid: 90d1ac97d5ae5e54e9ef9d80fc2b0b37, type: 3}
+    - m_Text: Saw
+      m_Image: {fileID: 21300000, guid: 74005ec319475234381ad39c866a1fbd, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3406,7 +3412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Furnace
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3512,10 +3518,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28a4ecdab2a88349a895439673268a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnace: {fileID: 11400000, guid: c5331a08881fc95439cc0c7b1c418769, type: 2}
+  tiles:
+  - {fileID: 11400000, guid: c5331a08881fc95439cc0c7b1c418769, type: 2}
+  - {fileID: 11400000, guid: f6e2d81819c8f8446821919d5a1d33cd, type: 2}
+  - {fileID: 11400000, guid: 77be561aad3b5a6479e59cae033349ba, type: 2}
+  - {fileID: 11400000, guid: fcf67fa9a3dcc7c46937521e766d792f, type: 2}
+  - {fileID: 11400000, guid: c0ea38d5d7455074ca514db6a6ebe245, type: 2}
   floor: {fileID: 670905844}
   machines: {fileID: 1941138619}
   seePlacement: {fileID: 826935790}
+  machineSelection: {fileID: 1285030234}
 --- !u!4 &1396392133
 Transform:
   m_ObjectHideFlags: 0
@@ -3524,7 +3536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396392131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.99340504, y: -0.19378781, z: -0.18540564}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
