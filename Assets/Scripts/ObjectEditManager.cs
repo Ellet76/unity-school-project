@@ -22,7 +22,7 @@ public class ObjectEditManager : MonoBehaviour
         
         if (machineSelection.options[machineSelection.value].text ==  "Edit")
         {
-            if (Input.GetMouseButtonDown(0) == true)
+            if (Input.GetMouseButton(0) == true)
             {
                 Debug.Log("Recognized Button press");
                 DeleteMachine();
