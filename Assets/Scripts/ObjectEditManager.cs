@@ -24,35 +24,45 @@ public class ObjectEditManager : MonoBehaviour
         {
             if (Input.GetMouseButton(0) == true)
             {
-                Debug.Log("Recognized Button press");
                 DeleteMachine();
             }
-            if (Input.GetKeyDown(KeyCode.R) == true)
+            if (Input.GetKey(KeyCode.R) == true)
             {
 
+                Rotation();
             }
         }
     }
 
     void DeleteMachine()
     {
+        //Gets mouse position
         Vector3Int gridMousePosition = ConvertMousePos();
+
+        //Checks for objects at position
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x + 1, gridMousePosition.y + 1), Vector2.up, 0f);
         if (hit.collider != null)
         {
+            //Deletes object 
             Destroy(hit.collider.gameObject);
         }
     }
 
     void Rotation()
     {
+        //Gets mouse position
         Vector3Int gridMousePosition = ConvertMousePos();
+
+        //Checks for object at position
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x + 1, gridMousePosition.y + 1), Vector2.up, 0f);
         if (hit.collider != null)
         {
+            //Gets the angles for object
             GameObject machine = hit.collider.gameObject;
             Quaternion pastRotation = machine.transform.rotation;
             Vector3 newAngle = pastRotation.eulerAngles;
+
+            //Rotates object
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 newAngle.z += 90;

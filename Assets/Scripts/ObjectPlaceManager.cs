@@ -39,6 +39,7 @@ public class ObjectPlaceManager : MonoBehaviour
 
     Vector3Int ConvertMousePos()
     {
+        //Gets the mouse position from the screen and converts it to world space
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int gridPosition = floorMap.WorldToCell(mousePosition);
         gridPosition.x = gridPosition.x + 1;
@@ -48,12 +49,16 @@ public class ObjectPlaceManager : MonoBehaviour
 
     void PlaceObject(GameObject machine)
     {
+        //Mouse position form the grid
         Vector3Int gridMousePosition = ConvertMousePos();
+        
+        //Acual mouse position
         Vector3Int realMousePos = floorMap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
-
+        //Checks if the position is possible to place at 
         if (floor.HasTile(realMousePos))
         {
+            //Checks if there is already something there
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x, gridMousePosition.y), Vector2.up, 0f);
             if (hit.collider == null)
             {
