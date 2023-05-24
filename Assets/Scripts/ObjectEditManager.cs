@@ -22,13 +22,14 @@ public class ObjectEditManager : MonoBehaviour
         
         if (machineSelection.options[machineSelection.value].text ==  "Edit")
         {
+            
             if (Input.GetMouseButton(0) == true)
             {
                 DeleteMachine();
             }
             if (Input.GetKey(KeyCode.R) == true)
             {
-
+                
                 Rotation();
             }
         }
@@ -52,9 +53,11 @@ public class ObjectEditManager : MonoBehaviour
     {
         //Gets mouse position
         Vector3Int gridMousePosition = ConvertMousePos();
+        LayerMask mask = LayerMask.GetMask("Machines");
+
 
         //Checks for object at position
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x + 1, gridMousePosition.y + 1), Vector2.up, 0f);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x + 1, gridMousePosition.y + 1), Vector2.up, 0f, mask);
         if (hit.collider != null)
         {
             //Gets the angles for object
@@ -66,10 +69,13 @@ public class ObjectEditManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 newAngle.z += 90;
+
+                Debug.Log("Rotation Succesful");
             }
             else if(Input.GetKeyDown(KeyCode.RightArrow))
             {
                 newAngle.z -= 90;
+                Debug.Log("Rotation Succesful");
             }
             machine.transform.rotation = Quaternion.Euler(newAngle);
         }

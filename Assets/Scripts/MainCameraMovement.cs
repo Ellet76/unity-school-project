@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class MainCameraMovement : MonoBehaviour
 {
-    Vector3 targetPosition;
-    float movementSpeed = 10;
+    private Vector3 targetPosition;
+    private float movementSpeed = 10;
+    private float step;
+
+
 
     void Start()
     {
@@ -15,20 +18,36 @@ public class MainCameraMovement : MonoBehaviour
 
     void Update()
     {
-        float step = movementSpeed * Time.deltaTime;
+        step = Time.deltaTime * movementSpeed;
         float AD = Input.GetAxis("Horizontal");
         float WS = Input.GetAxis("Vertical");
         
-        targetPosition = new Vector3(gameObject.transform.position.x + AD, gameObject.transform.position.y + WS, -10);
-        if (targetPosition.y >= 25 || targetPosition.y <= -25)
+        targetPosition = new Vector3(transform.position.x + AD, transform.position.y + WS, -10);
+
+
+    }
+
+    private void LateUpdate()
+    {
+
+        if (targetPosition.y >= 25)
         {
-            targetPosition.y = targetPosition.y - (targetPosition.y/25);
+            targetPosition = new Vector3(targetPosition.x, 25, -10);
         }
-        if (targetPosition.x >= 25 || targetPosition.x <= -25)
+        if (targetPosition.x >= 25)
         {
-            targetPosition.x = targetPosition.x - (targetPosition.x / 25);
+            targetPosition = new Vector3(25, targetPosition.y, -10);
+        }
+        if (targetPosition.y <= -25)
+        {
+            targetPosition = new Vector3(targetPosition.x, -25, -10);
+        }
+        if (targetPosition.x <= -25)
+        {
+            targetPosition = new Vector3(-25, targetPosition.y, -10);
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+
     }
 
 }

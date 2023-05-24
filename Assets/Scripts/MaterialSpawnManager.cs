@@ -1,33 +1,39 @@
+using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MaterialSpawnManager : MonoBehaviour
 {
     bool materialsSpawning = true;
-    int materialSpawnDelay = 1;
+    int materialSpawnDelay = 0;
     public GameObject ironOre;
     public Transform importTile;
-    
+    private Coroutine test;
     
     void Start()
     {
-        if (materialsSpawning)
-        {
-            StartCoroutine(Spawner());
-        }
+        test = StartCoroutine(Spawner());
     }
 
     
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            StopCoroutine(test);
+        }
     }
 
 
     IEnumerator Spawner()
     {
-        Instantiate(ironOre, importTile.position, Quaternion.identity);
-        yield return new WaitForSecondsRealtime(materialSpawnDelay);
+        for (;;)
+        {
+            Instantiate(ironOre, importTile.position, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+
+        }
     }
 }
