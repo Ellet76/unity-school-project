@@ -16,6 +16,8 @@ public class ObjectPlaceManager : MonoBehaviour
 
     public TMP_Dropdown machineSelection;
 
+    public GameObject moneyManager;
+
 
     void Start()
     {
@@ -29,7 +31,10 @@ public class ObjectPlaceManager : MonoBehaviour
         {
             try
             {
-                PlaceObject(machines[machineSelection.value - 1]);
+                if (!moneyManager.GetComponent<MoneyManager>().allowSpending)
+                {
+                    PlaceObject(machines[machineSelection.value - 1]);
+                }
             }
             catch (System.Exception) 
             { }
@@ -64,6 +69,7 @@ public class ObjectPlaceManager : MonoBehaviour
             {
                 GameObject machineObject = Instantiate(machine, gridMousePosition, Quaternion.identity);
                 machineObject.transform.SetParent(parent);
+                moneyManager.GetComponent<MoneyManager>().money = moneyManager.GetComponent<MoneyManager>().money - 10;
             }
         }
     }

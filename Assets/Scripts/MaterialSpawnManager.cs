@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class MaterialSpawnManager : MonoBehaviour
 {
-    bool materialsSpawning = true;
-    int materialSpawnDelay = 0;
     public GameObject ironOre;
     public Transform importTile;
     private Coroutine test;
