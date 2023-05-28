@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6876abd37366f1349bd3b1643923b9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: up
+  direction: left
 --- !u!61 &-7501175847045242006
 BoxCollider2D:
   m_ObjectHideFlags: 0

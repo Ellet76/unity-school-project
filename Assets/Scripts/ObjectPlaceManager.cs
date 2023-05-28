@@ -31,7 +31,7 @@ public class ObjectPlaceManager : MonoBehaviour
         {
             try
             {
-                if (!moneyManager.GetComponent<MoneyManager>().allowSpending)
+                if (moneyManager.GetComponent<MoneyManager>().allowSpending)
                 {
                     PlaceObject(machines[machineSelection.value - 1]);
                 }
