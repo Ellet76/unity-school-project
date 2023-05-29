@@ -6,18 +6,22 @@ using UnityEngine.UI;
 
 public class MaterialSpawnManager : MonoBehaviour
 {
+    // Declares variables
+
     public GameObject ironOre;
     public Transform importTile;
     private Coroutine test;
     
     void Start()
     {
+        // starts Coroutine for materials
         test = StartCoroutine(Spawner());
     }
 
     
     void Update()
     {
+        // Stops Coroutine of pressed G
         if (Input.GetKeyDown(KeyCode.G))
         {
             StopCoroutine(test);
@@ -27,6 +31,7 @@ public class MaterialSpawnManager : MonoBehaviour
 
     IEnumerator Spawner()
     {
+        // Declares Coroutine
         for (;;)
         {
             Instantiate(ironOre, importTile.position, Quaternion.identity);

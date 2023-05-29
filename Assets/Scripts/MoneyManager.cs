@@ -10,6 +10,8 @@ public class MoneyManager : MonoBehaviour
 
     private void Update()
     {
+        // Checks if there is enough currency to place structures
+
         if (money < 10)
         {
             allowSpending = false;
