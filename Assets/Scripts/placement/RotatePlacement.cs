@@ -6,8 +6,9 @@ using UnityEngine;
 public class RotatePlacement : MonoBehaviour
 {
 
-    public float rotation;
+    private float rotation;
     private int currentRotation = 1;
+    public string newRotation;
 
     void Update()
     {
@@ -25,7 +26,7 @@ public class RotatePlacement : MonoBehaviour
         {
             currentRotation = 1;
         }
-        Rotate();
+        newRotation = Rotate();
     }
 
     string Rotate()
