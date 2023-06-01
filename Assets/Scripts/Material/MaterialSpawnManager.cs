@@ -1,4 +1,3 @@
-using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,21 +9,29 @@ public class MaterialSpawnManager : MonoBehaviour
 
     public GameObject ironOre;
     public Transform importTile;
-    private Coroutine test;
+    private Coroutine coroutine;
+    private bool activeCoroutine = false;
     
     void Start()
     {
         // starts Coroutine for materials
-        test = StartCoroutine(Spawner());
+        coroutine = StartCoroutine(Spawner());
+        activeCoroutine = true;
     }
 
     
     void Update()
     {
-        // Stops Coroutine of pressed G
-        if (Input.GetKeyDown(KeyCode.G))
+        // Stops Coroutine when time paused and starts when time starts
+        if (!PauseTime.timeActive)
         {
-            StopCoroutine(test);
+            StopCoroutine(coroutine);
+            activeCoroutine = false;
+        }
+        if (PauseTime.timeActive && !activeCoroutine)
+        {
+            coroutine = StartCoroutine(Spawner());
+            activeCoroutine = true;
         }
     }
 
