@@ -11,6 +11,6 @@ public class SellMaterial : MonoBehaviour
         Debug.Log("Passed trigger sell");
         Destroy(collision.gameObject);
 
-        MoneyManager.GetComponent<MoneyManager>().money += 1;
+        MoneyManager.GetComponent<MoneyManager>().money += collision.GetComponent<SellValue>().sellValue;
     }
 }

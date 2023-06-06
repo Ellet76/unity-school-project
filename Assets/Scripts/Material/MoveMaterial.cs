@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveMaterial : MonoBehaviour
 {
     public string direction;
-    private float materialSpeed = 0.01f;
+    private float materialSpeed = 0.05f;
 
 
 

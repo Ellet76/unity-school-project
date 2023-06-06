@@ -11,13 +11,11 @@ public class CheckMouseUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         isMouseOverUIElement = true;
-        Debug.Log("Enters Pointer");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isMouseOverUIElement = false;
-        Debug.Log("Exits Pointer");
     }
 
 }

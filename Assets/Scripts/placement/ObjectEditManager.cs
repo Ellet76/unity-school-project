@@ -19,35 +19,15 @@ public class ObjectEditManager : MonoBehaviour
 
     void Update()
     {
-        
-        if (machineSelection.options[machineSelection.value].text ==  "Edit")
+
+
+        if (Input.GetKey(KeyCode.R) == true)
         {
-            
-            if (Input.GetMouseButton(0) == true)
-            {
-                DeleteMachine();
-            }
-            if (Input.GetKey(KeyCode.R) == true)
-            {
-                
-                Rotation();
-            }
+            Rotation();
         }
     }
 
-    void DeleteMachine()
-    {
-        //Gets mouse position
-        Vector3Int gridMousePosition = ConvertMousePos();
 
-        //Checks for objects at position
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x + 1, gridMousePosition.y + 1), Vector2.up, 0f);
-        if (hit.collider != null)
-        {
-            //Deletes object 
-            Destroy(hit.collider.gameObject);
-        }
-    }
 
     void Rotation()
     {

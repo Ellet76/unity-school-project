@@ -65,15 +65,12 @@ public class ObjectPlaceManager : MonoBehaviour
         //Checks if the position is possible to place at 
         if (floor.HasTile(realMousePos))
         {
-            Debug.Log("Passed Tile");
             //Checks if there is already something there
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(gridMousePosition.x, gridMousePosition.y), Vector2.up, 0f);
             if (hit.collider == null)
             {
-                Debug.Log("Passed Raycast");
                 if (!CheckMouseUI.isMouseOverUIElement)
                 {
-                    Debug.Log("Passed UI");
                     GameObject machineObject = Instantiate(machine, gridMousePosition, Quaternion.identity);
                     machineObject.transform.SetParent(parent);
                     moneyManager.GetComponent<MoneyManager>().money = moneyManager.GetComponent<MoneyManager>().money - 10;
